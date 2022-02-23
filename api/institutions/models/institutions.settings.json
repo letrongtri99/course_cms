@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "institutions",
+  "info": {
+    "name": "institutions",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "location": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "groups": {
+      "via": "institution",
+      "collection": "groups"
+    },
+    "admins": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "manager_institutions",
+      "dominant": true
+    },
+    "sub_payments": {
+      "via": "institution",
+      "collection": "sub-payment"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contents",
+  "info": {
+    "name": "content",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "summary": {
+      "type": "text"
+    },
+    "main_image_url": {
+      "type": "text"
+    },
+    "thumbnail_images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": ["images", "files", "videos"],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "article": {
+      "via": "contents",
+      "model": "article"
+    },
+    "tags": {
+      "via": "contents",
+      "collection": "tags"
+    },
+    "authors": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "contents",
+      "dominant": true
+    }
+  }
+}

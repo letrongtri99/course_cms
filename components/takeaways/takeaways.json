@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_takeaways_takeaways",
+  "info": {
+    "name": "takeaways",
+    "icon": "book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "nikkei-cms",
+  "license": "MIT",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "test": "jest",
+    "eslint-fix": "eslint . --fix",
+    "eslint": "eslint .",
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.14.0",
+    "husky": "^7.0.0",
+    "jest": "^27.4.7",
+    "prettier": "^2.5.1",
+    "sqlite3": "^5.0.2",
+    "supertest": "^6.2.2"
+  },
+  "dependencies": {
+    "@babel/eslint-parser": "^7.5.4",
+    "eslint": "^8.8.0",
+    "knex": "0.21.18",
+    "mysql": "2.18.1",
+    "promise": "^8.1.0",
+    "strapi": "3.6.1",
+    "strapi-admin": "3.6.1",
+    "strapi-connector-bookshelf": "3.6.1",
+    "strapi-plugin-content-manager": "3.6.1",
+    "strapi-plugin-content-type-builder": "3.6.1",
+    "strapi-plugin-email": "3.6.1",
+    "strapi-plugin-html-wysiwyg": "^1.0.5",
+    "strapi-plugin-i18n": "3.6.1",
+    "strapi-plugin-upload": "3.6.1",
+    "strapi-plugin-users-permissions": "3.6.1",
+    "strapi-utils": "3.6.1"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "546e167d-d256-46c2-834b-34d4e095378c"
+  },
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": "^6.0.0"
+  },
+  "imports": {
+    "#constant/*": "./constant/*.js"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "groups",
+  "info": {
+    "name": "groups",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "location": {
+      "type": "text"
+    },
+    "users": {
+      "via": "groups",
+      "plugin": "users-permissions",
+      "collection": "user",
+      "dominant": true
+    },
+    "institution": {
+      "via": "groups",
+      "model": "institutions"
+    },
+    "admins": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "manager_groups",
+      "dominant": true
+    },
+    "sub_payments": {
+      "via": "group",
+      "collection": "sub-payment"
+    }
+  }
+}

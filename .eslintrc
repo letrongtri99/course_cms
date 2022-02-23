@@ -1,0 +1,45 @@
+{
+  "parser": "@babel/eslint-parser",
+  "extends": ["eslint:recommended", "google"],
+  "env": {
+    "commonjs": true,
+    "es6": false,
+    "node": true,
+    "browser": false,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": false,
+      "impliedStrict": true
+    },
+    "sourceType": "module",
+    "requireConfigFile": false
+  },
+  "globals": {
+    "strapi": true
+  },
+  "rules": {
+    "indent": ["off"],
+    "linebreak-style": ["off", "unix"],
+    "operator-linebreak": [
+      "error",
+      "after",
+      {
+        "overrides": {
+          ":": "before",
+          "?": "before"
+        }
+      }
+    ],
+    "no-console": "error",
+    "quotes": "off",
+    "semi": ["error", "always"],
+    "no-var": "error",
+    "eqeqeq": ["error", "always"],
+    "object-curly-spacing": "off",
+    "max-len": 0,
+    "require-jsdoc": 0
+  }
+}

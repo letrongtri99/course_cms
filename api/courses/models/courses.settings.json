@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "name": "courses",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "start": {
+      "type": "date"
+    },
+    "end": {
+      "type": "date"
+    },
+    "subscribers": {
+      "type": "biginteger"
+    },
+    "articles": {
+      "via": "course",
+      "collection": "article"
+    },
+    "tags": {
+      "collection": "tags",
+      "via": "courses",
+      "dominant": true
+    },
+    "authors": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "courses",
+      "dominant": true
+    },
+    "subscriptions": {
+      "collection": "subscriptions",
+      "via": "courses",
+      "dominant": true
+    }
+  }
+}

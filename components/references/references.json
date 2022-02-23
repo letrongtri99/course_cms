@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_references_references",
+  "info": {
+    "name": "references",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "text"
+    }
+  }
+}

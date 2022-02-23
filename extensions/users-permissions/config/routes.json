@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/register",
+      "handler": "register.register",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

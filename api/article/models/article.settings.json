@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "name": "article",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "text"
+    },
+    "main_image_url": {
+      "type": "text"
+    },
+    "contents": {
+      "via": "article",
+      "collection": "content"
+    },
+    "takeaways": {
+      "type": "component",
+      "repeatable": true,
+      "component": "takeaways.takeaways"
+    },
+    "references": {
+      "type": "component",
+      "repeatable": true,
+      "component": "references.references"
+    },
+    "tags": {
+      "via": "articles",
+      "collection": "tags"
+    },
+    "course": {
+      "via": "articles",
+      "model": "courses"
+    },
+    "authors": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "articles",
+      "dominant": true
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subscriptions",
+  "info": {
+    "name": "subscriptions",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "duration": {
+      "type": "enumeration",
+      "enum": ["week", "month", "year"]
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": ["usd"]
+    },
+    "sub_payment": {
+      "via": "subscription",
+      "model": "sub-payment"
+    },
+    "courses": {
+      "via": "subscriptions",
+      "collection": "courses"
+    }
+  }
+}

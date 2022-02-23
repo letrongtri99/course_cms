@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sub_payments",
+  "info": {
+    "name": "sub_payment",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "subscription": {
+      "model": "subscriptions",
+      "via": "sub_payment"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "sub_payments"
+    },
+    "group": {
+      "model": "groups",
+      "via": "sub_payments"
+    },
+    "institution": {
+      "model": "institutions",
+      "via": "sub_payments"
+    },
+    "startDate": {
+      "type": "datetime"
+    },
+    "endDate": {
+      "type": "datetime"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["paid", "unpaid", "trial", "expired", "disabled"]
+    }
+  }
+}
